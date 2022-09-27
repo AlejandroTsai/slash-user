@@ -8,5 +8,5 @@ COPY ${JAR_FILE} app.jar
 ENV JAVA_OPTS=""
 ENV PARAMS=""
 ENV TZ="Asia/Shanghai"
-
+EXPOSE 32002
 ENTRYPOINT [ "java $JAVA_OPTS $PARAMS -Duser.timezone=GMT+08 -jar /app.jar" ]
