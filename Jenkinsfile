@@ -12,8 +12,7 @@ pipeline {
         }
         stage('build project') {
             steps {
-                sh "mvn clean"
-                sh "mvn -f ${parentDic}/${projectName} package dockerfile:build"
+                sh "mvn -f ${parentDic}/${projectName} clean package dockerfile:build"
                 echo 'build project completed!'
             }
         }
