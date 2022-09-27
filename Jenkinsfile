@@ -1,4 +1,5 @@
 
+def parentDic = "user-web"
 pipeline {
     agent any
 
@@ -11,7 +12,7 @@ pipeline {
         }
         stage('build project') {
             steps {
-                sh "mvn -f ${projectName} clean package"
+                sh "mvn -f ${parentDic}/${projectName} clean package"
                 echo 'build project completed!'
             }
         }
