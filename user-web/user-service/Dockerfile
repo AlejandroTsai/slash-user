@@ -2,7 +2,7 @@
 FROM java:8
 # 添加jar包
 ARG JAR_FILE
-COPY ${JAR_FILE} /app.jar
+COPY ${JAR_FILE} app.jar
 #COPY *.jar /app.jar
 
 ENV JAVA_OPTS=""
