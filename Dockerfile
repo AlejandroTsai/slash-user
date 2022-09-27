@@ -1,5 +1,7 @@
+# 指定基础镜像
 FROM java:8
-ADD *.jar /app.jar
+# 添加jar包
+COPY *.jar /app.jar
 
 ENV JAVA_OPTS=""
 ENV PARAMS=""
