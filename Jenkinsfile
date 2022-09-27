@@ -20,7 +20,7 @@ pipeline {
         stage('build and push image') {
             steps {
                 sh "cp ${parentDic}/${projectName}/target/*.jar *.jar"
-                sh "docker build -t ${projectName}:${project.version} ."
+                sh "mvn dockerfile:build"
                 sh "rm -f *.jar"
                 echo 'build and push image completed!'
             }
