@@ -6,4 +6,4 @@ COPY ${JAR_FILE} app.jar
 #COPY *.jar /app.jar
 
 EXPOSE 32001
-ENTRYPOINT [ "java -jar /app.jar" ]
+ENTRYPOINT ["java", "-jar", "/app.jar" ]
