@@ -13,15 +13,15 @@ pipeline {
         stage('build project') {
             steps {
                 sh "mvn clean"
-                sh "mvn -f ${parentDic}/${projectName} package"
+                sh "mvn -f ${parentDic}/${projectName} package dockerfile:build"
                 echo 'build project completed!'
             }
         }
         stage('build and push image') {
             steps {
-                sh "cp ${parentDic}/${projectName}/target/*.jar *.jar"
-                sh "mvn dockerfile:build"
-                sh "rm -f *.jar"
+//                 sh "cp ${parentDic}/${projectName}/target/*.jar *.jar"
+//                 sh "mvn dockerfile:build"
+//                 sh "rm -f *.jar"
                 echo 'build and push image completed!'
             }
         }
